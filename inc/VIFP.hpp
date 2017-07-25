@@ -3,7 +3,7 @@
 
 #include "Metric.hpp"
 
-class VIFP : protected Metric {
+class VIFP : public Metric {
 public:
 	VIFP() : Metric() { }
 	VIFP(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d);

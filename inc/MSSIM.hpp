@@ -13,9 +13,6 @@ public:
 	// Return the SSIM index only
 	// compute() needs to be called before getSSIM()
 	float getSSIM();
-	// Return the MS-SSIM index only
-	// compute() needs to be called before getMSSIM()
-	float getMSSIM();
 	void reset(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d);
 private:
 

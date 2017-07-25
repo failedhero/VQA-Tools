@@ -15,8 +15,9 @@ public:
 	Metric(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d);
 	~Metric() = default;
 
-	void reset(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d);
+	virtual void reset(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d);
 	virtual float computeScore() = 0;
+	virtual float getSSIM() { return 0.0;}
 protected:
 	void applyGaussianBlur(cv::Mat &src, cv::Mat &dst, int ksize, double sigma);
 	void check();

@@ -8,7 +8,11 @@ PSNR::PSNR(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d) : Metric(s, d
 float PSNR::computeScore()
 {
 	cv::subtract(*src, *dst, *psnrIdx);
-	return float(10*log10(255*255/cv::mean(*psnrIdx).val[0]));
+	cv::multiply(*psnrIdx, *psnrIdx, *psnrIdx);
+	auto tmp = cv::mean(*psnrIdx).val[0];
+	float val = 10 * log10(255 * 255 / tmp);
+	std::cout << val << std::ends;
+	return val;
 }
 
 void PSNR::reset(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d)

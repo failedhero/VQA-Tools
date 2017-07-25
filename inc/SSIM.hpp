@@ -3,7 +3,7 @@
 
 #include "Metric.hpp"
 
-class SSIM : protected Metric
+class SSIM : public Metric
 {
 public:
 	SSIM() : Metric() { }

@@ -36,7 +36,8 @@ private:
 	void chooseChromaFormat(const int chromaFormat);
 
 	std::string inputPath;
-	std::shared_ptr<std::vector<std::shared_ptr<cv::Mat>>> data;
+	// if you need the buffer of the each frames un-commented here, also in InputYUV::InputYUV() and InputYUV::readOneFrame
+	// std::shared_ptr<std::vector<std::shared_ptr<cv::Mat>>> data;
 	std::shared_ptr<yuv> link;
 
 	int height = 0, width = 0;

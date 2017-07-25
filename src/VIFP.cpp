@@ -31,8 +31,8 @@ float VIFP::computeScore()
 		}		
 		computeVIFP(N, num, den, scale);
 	}
-	
-	return float(num/den);
+	std::cout << num / den << std::ends;
+	return float(num / den);
 }
 
 void VIFP::computeVIFP(int N, double& num, double& den, int scale)

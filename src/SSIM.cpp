@@ -12,6 +12,7 @@ SSIM::SSIM(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d) : Metric(s, d
 float SSIM::computeScore()
 {
 	auto res = computeSSIM();
+	std::cout << res.first << std::ends;
 	return float(res.first);
 }
 

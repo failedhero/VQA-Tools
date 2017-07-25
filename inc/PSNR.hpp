@@ -3,7 +3,7 @@
 
 #include "Metric.hpp"
 
-class PSNR : protected Metric
+class PSNR : public Metric
 {
 public:
 	PSNR() : Metric() { }

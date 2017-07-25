@@ -35,7 +35,7 @@ float MSSIM::computeScore()
 	msssim = mssim[NLEVS-1];
 	for (int l=0; l<NLEVS-1; l++)
 		msssim *= pow(mcs[l], WEIGHT[l]);
-
+	std::cout << msssim << std::ends;
 	return float(msssim);
 }
 
@@ -54,10 +54,6 @@ void MSSIM::reset(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d)
 
 float MSSIM::getSSIM()
 {
+	std::cout << ssim << std::ends;
 	return float(ssim);
-}
-
-float MSSIM::getMSSIM()
-{
-	return float(msssim);
 }

@@ -2,7 +2,7 @@
 
 InputYUV::InputYUV(const std::string s, const int h, const int w, const int c) : inputPath(s), height(h), width(w)
 {
-	data = std::make_shared<std::vector<std::shared_ptr<cv::Mat>>>();
+	// data = std::make_shared<std::vector<std::shared_ptr<cv::Mat>>>();
 	chooseChromaFormat(c);
 	nframes = link->nframes;
 }
@@ -10,8 +10,9 @@ InputYUV::InputYUV(const std::string s, const int h, const int w, const int c) :
 std::shared_ptr<cv::Mat> InputYUV::readOneFrame()
 {
 	link->generateFrame();
-	data->push_back(link->yuv2RGB());
-	return std::make_shared<cv::Mat>(*(data->back()));
+	// data->push_back(link->yuv2RGB());
+	// return std::make_shared<cv::Mat>(*(data->back()));
+	return link->yuv2RGB();
 }
 
 void InputYUV::chooseChromaFormat(const int chromaFormat)
