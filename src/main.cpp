@@ -24,14 +24,6 @@ enum Params
 	PARAM_SIZE
 };
 
-enum Metrics {
-	METRIC_PSNR = 0,
-	METRIC_SSIM,
-	METRIC_MSSIM,
-	METRIC_VIFP,
-	METRIC_SIZE
-};
-
 static const std::set<std::string> METRIC{"PSNR", "SSIM", "MSSIM", "VIFP"};
 typedef std::map<std::string, std::vector<float>> RESULT;
 
