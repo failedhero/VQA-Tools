@@ -1,7 +1,9 @@
 #include "Metric.hpp"
 
-Metric::Metric(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d) : src(s), dst(d)
+Metric::Metric(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d)
 {
+	src = std::make_shared<cv::Mat>(*s);
+	dst = std::make_shared<cv::Mat>(*d);
 	check();
 }
 
@@ -18,8 +20,8 @@ void Metric::check()
 
 void Metric::reset(std::shared_ptr<cv::Mat> s, std::shared_ptr<cv::Mat> d)
 {
-	src = s;
-	dst = d;
+	src = std::make_shared<cv::Mat>(*s);
+	dst = std::make_shared<cv::Mat>(*d);
 	check();
 }
 
